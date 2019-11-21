@@ -16,19 +16,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a data-pagina="#home" class="nav-link">Início <span class="sr-only">(current)</span></a>
+                    <a data-pagina="#home" class="nav-link" href="index.php">Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a data-pagina="#inscr" class="nav-link">Inscrições</a>
+                    <a data-pagina="#inscr" class="nav-link" href='inscr.php'>Inscrições</a>
                 </li>
                 <li class="nav-item">
-                    <a data-pagina="#inscr" class="nav-link">Galeria</a>
+                    <a data-pagina="#inscr" class="nav-link" href='galeria.php'>Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a data-pagina="#contatos" class="nav-link">Contatos</a>
+                    <a data-pagina="#contatos" class="nav-link" href='contatos.php'>Contatos</a>
                 </li>
                 <li class="nav-item">
-                    <a data-pagina="#about" class="nav-link">Sobre nós</a>
+                    <a data-pagina="#about" class="nav-link" href='about.php'>Sobre nós</a>
                 </li>
                 <li class="nav-item">
                     <a onClick="document.location.href='login.php'" class="nav-link">Login</a>
