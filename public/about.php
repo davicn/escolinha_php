@@ -16,23 +16,23 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href='index.php'>Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inscrições</a>
+                    <a class="nav-link" href='inscr.php'> Inscrições</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Galeria</a>
+                    <a class="nav-link" href='galeria.php'>Galeria</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Contatos</a>
+                    <a class="nav-link " href='contatos.php'>Contatos</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="#">Sobre nós</a>
+                    <a class="nav-link " href='about.php'>Sobre nós</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href='login.php'>Search</a>
             </form>
         </div>
     </nav>
@@ -90,7 +90,6 @@
                 <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
             </div>
         </footer>
-
 </body>
 
 </html>
