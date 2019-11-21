@@ -30,6 +30,9 @@
                 <li class="nav-item">
                     <a data-pagina="#about" class="nav-link">Sobre nós</a>
                 </li>
+                <li class="nav-item">
+                    <a onClick="document.location.href='login.php'" class="nav-link">Login</a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

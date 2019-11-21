@@ -31,7 +31,7 @@
                     <a class="nav-link " href="#">Sobre nós</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="#">Página Administrativa</a>
+                    <a class="nav-link " onClick="document.location.href='admin.php'">Página Administrativa</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -44,7 +44,7 @@
     <div class="container">
         <div class="card h-100 ">
             <div class="card-header text-center">
-                <h2>Página Administrativa - Cadastro de Instrutor</h2>
+                <h2>Página Administrativa - Cadastro de Aluno</h2>
             </div>
             <div class="card-body">
                 <form>
@@ -53,13 +53,32 @@
                         <input class="form-control" id="exampleFormControlInput1">
                     </div>
                     <div class="form-group">
+                        <label for="exampleFormControlInput1">Data de Nascimento</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nome do Responsavel</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>                    
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Telefone do Responsavel</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    <div class="form-group">
                         <label for="exampleFormControlInput1">Endereço</label>
                         <input class="form-control" id="exampleFormControlInput1">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Telefone</label>
+                        <label for="exampleFormControlInput1">Posição</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>                   
+                     <div class="form-group">
+                        <label for="exampleFormControlInput1">Foto</label>
                         <input class="form-control" id="exampleFormControlInput1">
                     </div>
+
+
                     <div class="form-group">
                         <label for="exampleFormControlSelect">Turno</label>
                         <select class="form-control">
@@ -70,11 +89,23 @@
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Turma por idade</label>
                         <select class="form-control">
-                            <option>Sub 10 (07-10)</option>
-                            <option>Sub 13 (11-13)</option>
-                            <option>Sub 16 (14-16)</option>
+                            <option>Sub 6 (00-06)</option>
+                            <option>Sub 17 (07-17)</option>
                         </select>
                     </div>
+
+                     <div class="form-group">
+                        <label for="exampleFormControlInput1">Observação Médica</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    
+
+                     <div class="form-group">
+                        <label for="exampleFormControlInput1">Autorização Médica</label>
+                        <input class="form-control" id="exampleFormControlInput1">
+                    </div>
+                    
+                    
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-success">Enviar</button>

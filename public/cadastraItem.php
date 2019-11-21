@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Escolinha :: Login</title>
+    <title>Página Administrativa :: Cadastro de Item</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                     <a class="nav-link " href="#">Sobre nós</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="#">Login</a>
+                    <a class="nav-link " onClick="document.location.href='admin.php'">Página Administrativa</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -42,21 +42,40 @@
     <br>
 
     <div class="container">
-        <div class="card">
+        <div class="card h-100 ">
+            <div class="card-header text-center">
+                <h2>Página Administrativa - Cadastro de Turma</h2>
+            </div>
+            <div class="card-body">
+                <form action="adicionaItem.php" method="POST">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nome do Item</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Valor</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="valor">
+                    </div>
 
-            <div class="card-body text-center">
-                <img class="mb-4" src="../img/avatar.png" alt="" width="150" height="150">
-                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
-                <form action="auteticacao.php" method="POST">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Username</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="username">
+                        <label for="exampleFormControlInput1">Quantidade</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="quantidade">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Tamanho</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="tamanho">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Senha</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="password">
+                        <label for="exampleFormControlInput1">Descricao</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="descricao">
                     </div>
-                    <button class="btn btn-lg btn-success btn-block" type="submit">Acessar</button>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>

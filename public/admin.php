@@ -54,7 +54,7 @@
                         <h5 class="card-title">Cadastrar Aluno</h5>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
+                        <a onClick="document.location.href='cadastraAluno.php'" class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
                 <div class="card  h-100 text-center">
@@ -68,39 +68,30 @@
                 </div>
             </div>
 
-            <h3>Turmas</h3>
+            <h3>Financeiro</h3>
             <div class="card-group">
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/instrutor.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../img/financeiro1.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Cadastrar Instrutor</h5>
+                        <h5 class="card-title">Lojinha: Consultar Item</h5>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
+                        <a onClick="document.location.href='consultaItem.php'" class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/instrutor2.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../img/financeiro2.jpg" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Pesquisar Instrutor</h5>
+                        <h5 class="card-title">Lojinha: Cadastrar Item</h5>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
+                        <a onClick="document.location.href='cadastraItem.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
             </div>
 
             <h3>Turmas</h3>
             <div class="card-group">
-                <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/imagem1.PNG" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Cadastrar Turma</h5>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
-                    </div>
-                </div>
                 <div class="card  h-100 text-center">
                     <img class="card-img-top" src="../img/imagem4.PNG" alt="Card image cap">
                     <div class="card-body">
@@ -115,37 +106,7 @@
         </div>
     </div>
 
-    <!--   <div class="container">
-        <div class="card h-100 text-center">
-            <div class="card-header">
-                <h2>Página Administrativa</h2>
-            </div>
-            <div class="card-body">
-                <h2>Aluno</h2>
-                <div class="row">
 
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Cadastrar Aluno</h5>
-                                <img class="card-img" src="../img/imagem9.PNG" alt="Descrição da foto" />
-                                <a href="#" class="btn btn-success">iniciar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Pesquisar Aluno</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" class="btn btn-success">Iniciar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="card-footer text-muted">
-                    2 dias atrás
-                </div> -->
     </div>
     </div>
     </div> -->
