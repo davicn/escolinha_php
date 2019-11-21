@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Página Administrativa :: Consulta de Item</title>
+    <title>Página Administrativa :: Alteração de Cadastro de Item</title>
 </head>
 
 <body>
@@ -44,57 +44,39 @@
     <div class="container">
         <div class="card h-100 ">
             <div class="card-header text-center">
-                <h2>Página Administrativa - Consulta de Item</h2>
+                <h2>Página Administrativa - Alteração de Cadastro de Turma</h2>
             </div>
             <div class="card-body">
-                <table class="table" id="tamanho" >
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Tamanho</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Ação</th>
-    </tr>
-  </thead>
-<tbody>
-     <?php 
-     require_once('item.php');
-    require_once('listagemCarrinhos.php');
-    $item1 = new Item("Meião", "10,00", "5", "médio", "Meião Médio"); 
-    $item2 = new Item("Blusão", "20,00", "10", "médio", "Blusão Médio");
-    $item3 = new Item("Short", "30,00", "3", "médio", "Short Médio");
+                <form >
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nome do Item</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Valor</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="valor">
+                    </div>
 
-   /* $listagemCarrinho = new ListagemCarrinho();
-    $listagemCarrinho->adiciona($item1);
-    $listagemCarrinho->adiciona($item2);
-    $listagemCarrinho->adiciona($item3);
-    */
-    $items= array();
-    $items[] = $item1;
-     $items[] = $item2;
-      $items[] = $item3;
+                    <div class="form-group">
+                        <label for="exampleFor0mControlInput1">Quantidade</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="quantidade">
+                    </div>
 
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Tamanho</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="tamanho">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Descricao</label>
+                        <input class="form-control" id="exampleFormControlInput1" name="descricao">
+                    </div>
 
-
-  
-    foreach ($items as $row) {
-
-      echo '<tr>';
-      echo '<td>'. $row->getNome() .'</td>';
-      echo '<td>'. $row->getValor() .'</td>';
-      echo '<td>'. $row->getQuantidade() .'</td>';
-      echo '<td>'. $row->getTamanho() .'</td>';
-      echo '<td>'. $row->getDescricao() .'</td>';
-
-      echo '<td>' + "<img src='img\lixeira.png'width= 10 />" + "|"  + '</td>';
-      echo '</tr>';
-    } 
-    ?>
-</tbody>
-</table>
-
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Alterar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

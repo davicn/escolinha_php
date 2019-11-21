@@ -60,10 +60,10 @@
                 <div class="card  h-100 text-center">
                     <img class="card-img-top" src="../img/imagem6.PNG" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Pesquisar Aluno</h5>
+                        <h5 class="card-title" >Pesquisar Aluno</h5>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
+                        <a onClick="document.location.href='consultaAluno.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                         <h5 class="card-title">Pesquisar Turma</h5>
                     </div>
                     <div class="card-footer">
-                        <a href="#" class="btn btn-success">Iniciar</a>
+                        <a onClick="document.location.href='consultaTurma.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
             </div>

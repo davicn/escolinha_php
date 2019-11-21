@@ -11,13 +11,13 @@ class Item
    $this->name = $name;
    $this->valor = $valor;
    $this->quantidade = $quantidade;
-   $this->descicao = $descricao;
+   $this->descricao = $descricao;
    $this->tamanho = $tamanho;
 
   }
  
  public Function getNome(){
- 	return $this->nome;
+ 	return $this->name;
  }
 
  public Function getValor(){

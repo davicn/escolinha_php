@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Página Administrativa :: Cadastro de Aluno</title>
+    <title>Página Administrativa :: Alteração de Cadastro de Aluno</title>
 </head>
 
 <body>
@@ -44,10 +44,10 @@
     <div class="container">
         <div class="card h-100 ">
             <div class="card-header text-center">
-                <h2>Página Administrativa - Cadastro de Aluno</h2>
+                <h2>Página Administrativa - Alteração de Cadastro de Aluno</h2>
             </div>
             <div class="card-body">
-                <form action="adicionaAluno.php" method="POST">
+                <form >
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome completo</label>
                         <input class="form-control" id="exampleFormControlInput1" name="nomeAluno">
@@ -108,7 +108,7 @@
                     
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button type="submit" class="btn btn-success">Alterar</button>
                         </div>
                     </div>
                 </form>

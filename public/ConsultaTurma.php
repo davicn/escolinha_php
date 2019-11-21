@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title>Página Administrativa :: Consulta de Item</title>
+    <title>Página Administrativa :: Consulta de Turma</title>
 </head>
 
 <body>
@@ -44,51 +44,43 @@
     <div class="container">
         <div class="card h-100 ">
             <div class="card-header text-center">
-                <h2>Página Administrativa - Consulta de Item</h2>
+                <h2>Página Administrativa - Consulta de Turma</h2>
             </div>
             <div class="card-body">
                 <table class="table" id="tamanho" >
   <thead>
     <tr>
       <th scope="col">Nome</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Tamanho</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Ação</th>
+      <th scope="col">Turma</th>
     </tr>
   </thead>
 <tbody>
      <?php 
-     require_once('item.php');
-    require_once('listagemCarrinhos.php');
-    $item1 = new Item("Meião", "10,00", "5", "médio", "Meião Médio"); 
-    $item2 = new Item("Blusão", "20,00", "10", "médio", "Blusão Médio");
-    $item3 = new Item("Short", "30,00", "3", "médio", "Short Médio");
+     require_once('aluno.php');
+    
+    $aluno1 = new Aluno("Jose da Silva Oliveiira Junior", "22/03/2005", "Jose da Silva Oliveiira","$(98) 98923-0432",  "Rua Nova","Atacante" , "-"," Manhã", "Sub 17 (07-17)", "-", "-"); 
+    $aluno2 = new Aluno("Pedro Luid de Sousa Oliveira", "17/04/2015", "Sandra Maria de SOusa Oliveira","(98) 9 8825-3056",  "Rua Maranhão, 726","Goleiro" , "-","Manhã", "Sub 6 (00-06)", "-", "-");
+    $aluno3 = new Aluno("Cainã Silva de Oliveira", "01/05/2010", "Novarck Silva de Oliveira","(98) 9 88967854",  "Rua Neturno, bloco E, ap 107","-" , "-","Manhã", "Sub 17 (07-17)", "-", "-");
 
    /* $listagemCarrinho = new ListagemCarrinho();
     $listagemCarrinho->adiciona($item1);
     $listagemCarrinho->adiciona($item2);
     $listagemCarrinho->adiciona($item3);
     */
-    $items= array();
-    $items[] = $item1;
-     $items[] = $item2;
-      $items[] = $item3;
+    $alunos= array();
+    $alunos[] = $aluno1;
+     $alunos[] = $aluno2;
+      $alunos[] = $aluno3;
 
 
 
   
-    foreach ($items as $row) {
+    foreach ($alunos as $row) {
 
       echo '<tr>';
-      echo '<td>'. $row->getNome() .'</td>';
-      echo '<td>'. $row->getValor() .'</td>';
-      echo '<td>'. $row->getQuantidade() .'</td>';
-      echo '<td>'. $row->getTamanho() .'</td>';
-      echo '<td>'. $row->getDescricao() .'</td>';
+      echo '<td>'. $row->getNomeAluno() .'</td>';
+      echo '<td>'. $row->getTurma() .'</td>';
 
-      echo '<td>' + "<img src='img\lixeira.png'width= 10 />" + "|"  + '</td>';
       echo '</tr>';
     } 
     ?>

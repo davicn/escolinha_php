@@ -8,24 +8,27 @@ $tamanho = $_POST['tamanho'];
 include_once('item.php');
 include_once('listagemCarrinhos.php');
 
-print_r ($tamanho);
+print $tamanho;
+echo $tamanho;
+
 if(($name != "") and ($valor != "") and ($quantidade != "") and ($descricao != "" ) and ($tamanho != "")){
 	$carrinhoItems = new listagemCarrinho();
 	$item = new Item($name, $valor, $quantidade, $tamanho, $descricao);
 	
 	$carrinhoItems->Adiciona($item);
-	console.log($item->getNome());
+	echo $item->getNome();
+	/*
 	$name = "";
 	$valor = "";
 	$quantidade = "";
 	$descricao = "";
 	$tamanho = "";
-	echo "<script>console.log({$item->getNome()})</script>";
+*/
 
 	 header('Location: admin.php');
 	
 } else {
-	header('Location: cadastraAluno.php');
+	header('Location: cadastraItem.php');
 }
 
 ?>
