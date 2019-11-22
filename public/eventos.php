@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <title> Escolinha :: Home</title>
+    <title> Escolinha :: Eventos</title>
 </head>
 
 <body>
@@ -15,8 +15,8 @@
         </a>-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a data-pagina="#home" class="nav-link" href="index.php">Início <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a data-pagina="#home" class="nav-link" href="index.php">Início</a>
                 </li>
                 <li class="nav-item">
                     <a data-pagina="#inscr" class="nav-link" href='inscr.php'>Inscrições</a>
@@ -24,8 +24,8 @@
                 <li class="nav-item">
                     <a data-pagina="#inscr" class="nav-link" href='galeria.php'>Galeria</a>
                 </li>
-                <li class="nav-item">
-                    <a data-pagina="#inscr" class="nav-link" href='eventos.php'>Eventos</a>
+                <li class="nav-item active">
+                    <a data-pagina="#inscr" class="nav-link" href='eventos.php'>Eventos <span class="sr-only">(current)</span> </a>
                 </li>
                 <li class="nav-item">
                     <a data-pagina="#contatos" class="nav-link" href='contatos.php'>Contatos</a>
@@ -48,24 +48,27 @@
     <div class="container">
 
         <div class="row align-items-center my-5">
-            <div class="col-lg-7">
-                <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/imagem10.PNG" alt="">
-            </div>
             <div class="col-lg-5">
-                <h3>Ensinando Crianças</h3>
-                <p> A prática de esportes na infância e na adolescência colabora para a formação de amizades e, claro, para a saúde. Mas a contribuição do esporte na formação de uma pessoa vai ainda além disso e pode ser extremamente benéfica para a assimilação
-                    de valores e a formação do caráter. </p>
+                <h3>Calendário de Eventos</h3>
+                <p> Confira nosso calendário de eventos e programe-se para não perder
+                    nenhuma de nossas atividades! </p>
+            </div>
+            <div class="col-lg-7">
+                <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/calendario1.jpg" alt="">
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-4 mb-5">
-                <div class="card h-100">
+                <div class="card h-200">
                     <div class="card-body">
-                        <h3>Valores</h3>
+                        <h3>Estadual Sub-12</h3>
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/copa1.jpg" alt="">
                         <p class="card-text">
-                            O esporte ensina que nada na vida tem valor se não foi conquistado honestamente. É um campo que deixa clara a contradição entre os objetivos perseguidos e a desonestidade na hora de tentar alcançá-los. Quem quer trapacear acaba nas sarjetas do mundo do
-                            esporte e, é claro, se sente sempre insatisfeito consigo mesmo.
+                            <br>    
+                            No próximo domingo iniciam-se as inscrições para participar do campeonato
+                            estadual da categoria Sub-12. Traga seu filho para fazer parte da nossa
+                            equipe vencedora!
                         </p>
                     </div>
 
@@ -73,12 +76,16 @@
             </div>
 
             <div class="col-md-4 mb-5">
-                <div class="card h-100">
+                <div class="card h-200">
                     <div class="card-body">
-                        <h3 class="card-title">Qualidade de Vida</h3>
+                        <h3 class="card-title">Escolinha Solidária</h3>
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/doacao1.jpg" alt="">
                         <p class="card-text">
-                            Este é um dos maiores contributos que o esporte pode dar a seus filhos: a capacidade de trabalhar ao lado de outras pessoas em favor de um propósito comum. Se um time quer chegar longe, cada membro precisa conhecer seus limites, ajudar os outros e refrear
-                            o desejo de estrelismo. Poucas coisas ensinam isso de maneira tão vívida quanto o esporte.</p>
+                        <br>
+                            Ajude-nos a ajudar! Durante o período de inscrições para as turmas do ano de
+                            2020, você ganha 20% de desconto na taxa de matrícula ao trazer alimentos não 
+                            perecíveis para doação. Toda a ajuda será redirecionada para instituições carentes. 
+                            Não fique de fora e faça <a href="inscr.php">aqui</a> sua inscrição!</p>
                     </div>
 
                 </div>
@@ -87,10 +94,13 @@
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
-                        <h4 class="card-title">Conheça a nossa escolinha</h4>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/OOBntx-Zb_A" allowfullscreen></iframe>
-                        </div>
+                        <h3 class="card-title">Jogando com a família</h3>
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/dia-familia1.jpg" alt="">
+                        <p class="card-text">
+                        <br>
+                            Neste final de ano teremos nosso tradicional dia "Jogando com a Família"! 
+                            Traga seus parentes para um dia de muita diversão e descontração na nossa escolinha. 
+                            Para mais informações, entre em contato conosco através das nossas <a href="contatos.php">redes</a>.</p>
                     </div>
                 </div>
             </div>

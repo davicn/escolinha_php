@@ -15,26 +15,29 @@
         </a>-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Início <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inscrições</a>
+            <li class="nav-item">
+                    <a class="nav-link" href="index.php">Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="#">Galeria</a>
+                    <a class="nav-link" href="inscr.php">Inscrições</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Contatos</a>
+                    <a class="nav-link" href="galeria.php">Galeria</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link " href="#">Sobre nós</a>
+                <li class="nav-item">
+                    <a class="nav-link" href='eventos.php'>Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="contatos.php">Contatos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="about.php">Sobre nós</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link " href="#">Página de Administração</a>
+                    <a class="nav-link " href="admin.php">Página de Administração</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline my-2 my-lg-0" action="index.php">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sair</button>
             </form>
         </div>
