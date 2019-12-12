@@ -11,13 +11,15 @@
         //<![CDATA[
         $(document).ready(function() {
             $('.abre-fecha').hide();
-            $('<div id="tela" ><img src="../img/imagem1.PNG" alt="Descrição da imagem" /></div>')
+            $('<div id="tela" ><img src="../img/real/timetecnico.jpeg" alt="Descrição da imagem" /></div>')
                 .insertAfter('#galeria');
             $('.foto').click(function(event) {
                 event.preventDefault();
                 $('#tela img').remove();
                 $('<img />')
                     .attr('src', $(this).attr('src'))
+                    .attr('width', 700)
+                    .attr('height', 500)
                     .css('opacity', '0.3')
                     .appendTo('#tela')
                     .animate({
@@ -71,13 +73,13 @@
             <div class="card-body">
                 <div id="tudo">
                     <div id="galeria">
-                        <a href="../img/imagem1.PNG"><img src="../img/imagem1.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem2.PNG"><img src="../img/imagem2.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem3.PNG"><img src="../img/imagem3.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem4.PNG"><img src="../img/imagem4.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem5.PNG"><img src="../img/imagem5.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem6.PNG"><img src="../img/imagem6.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
-                        <a href="../img/imagem7.PNG"><img src="../img/imagem7.PNG" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/timeinfanto.jpeg"><img src="../img/real/timeinfanto.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/timetecnico.jpeg"><img src="../img/real/timetecnico.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/doisbeiracampo.jpeg"><img src="../img/real/doisbeiracampo.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/jogadorsolo.jpeg"><img src="../img/real/jogadorsolo.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/levantandotaca.jpeg"><img src="../img/real/levantandotaca.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/capagremio.jpeg"><img src="../img/real/capagremio.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
+                        <a href="../img/real/timemisto.jpeg"><img src="../img/real/timemisto.jpeg" alt="Descrição da foto" width="125" height="80" class="foto" /></a>
                     </div>
 
                     <span class="abre-fecha">Clique para ampliar</span>

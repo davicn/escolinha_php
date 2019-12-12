@@ -52,7 +52,7 @@
             <h3>Alunos</h3>
             <div class="card-group">
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/imagem9.PNG" alt="Card image cap">
+                    <img class="card-img-top" src="../img/real/jogadorsolo2.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Cadastrar Aluno</h5>
                     </div>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/imagem6.PNG" alt="Card image cap">
+                    <img class="card-img-top" src="../img/real/timeinfantil.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" >Pesquisar Aluno</h5>
                     </div>
@@ -96,7 +96,7 @@
             <h3>Turmas</h3>
             <div class="card-group">
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/imagem4.PNG" alt="Card image cap">
+                    <img class="card-img-top" src="../img/real/timeinfanto.jpeg" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">Pesquisar Turma</h5>
                     </div>

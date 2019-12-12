@@ -61,13 +61,13 @@
                     </div>
 
                     <div class="col-sm">
-                        <img src="../img/imagem8.PNG" alt="Descrição da foto" width="550" height="400" />
+                        <img src="../img/real/jogadorsolo.jpeg" alt="Descrição da foto" width="550" height="400" />
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm">
-                        <img src="../img/imagem11.PNG" alt="Descrição da foto" width="550" height="400" />
+                        <img src="../img/real/timetecnico.jpeg" alt="Descrição da foto" width="550" height="400" />
                     </div>
                     <div class="col-sm">
                         <p>

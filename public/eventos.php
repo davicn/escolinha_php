@@ -33,9 +33,6 @@
                 <li class="nav-item">
                     <a data-pagina="#about" class="nav-link" href='about.php'>Sobre nós</a>
                 </li>
-                <li class="nav-item">
-                    <a onClick="document.location.href='login.php'" class="nav-link">Login</a>
-                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -63,7 +60,7 @@
                 <div class="card h-200">
                     <div class="card-body">
                         <h3>Estadual Sub-12</h3>
-                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/copa1.jpg" alt="">
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/real/levantandotaca.jpeg" alt="">
                         <p class="card-text">
                             <br>    
                             No próximo domingo iniciam-se as inscrições para participar do campeonato
@@ -95,7 +92,7 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h3 class="card-title">Jogando com a família</h3>
-                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/dia-familia1.jpg" alt="">
+                        <img class="img-fluid rounded mb-4 mb-lg-0" src="../img/real/timemisto.jpeg" alt="">
                         <p class="card-text">
                         <br>
                             Neste final de ano teremos nosso tradicional dia "Jogando com a Família"! 
