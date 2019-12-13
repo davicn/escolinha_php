@@ -65,7 +65,7 @@
      $conn = OpenCon();
  
      $sql = "select
-                 alu.nome, men.valor, men.mes, men.pago
+                 alu.idaluno, alu.nome, men.valor, men.mes, men.pago
              from escolinha.mensalidade as men
              inner join escolinha.aluno as alu
              on men.aluno = alu.idaluno
@@ -76,7 +76,7 @@
      $mensalidades = array();
  
      while($row = $result->fetch_assoc()){
-         $mensalidades[] = new Mensalidade($row['nome'], $row['valor'], $row['mes'], $row['pago']);
+         $mensalidades[] = new Mensalidade($ros['idaluno'], $row['nome'], $row['valor'], $row['mes'], $row['pago']);
      }
    
      foreach ($mensalidades as $mensalidade) {

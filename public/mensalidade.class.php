@@ -2,16 +2,22 @@
 
     class Mensalidade{
 
+        private $_idAluno;
         private $_nomeAluno;
         private $_valor;
         private $_mes;
         private $_pago;
 
-        function __construct($nomeAluno, $valor, $mes, $pago) {
+        function __construct($idAluno, $nomeAluno, $valor, $mes, $pago) {
+            $this->_idAluno = $idAluno;
             $this->_nomeAluno = $nomeAluno;
             $this->_valor = $valor;
             $this->_mes = $mes;
             $this->_pago = $pago;
+        }
+
+        public function getIdAluno() {
+            return $this->_idAluno;
         }
 
         public function getAluno() {

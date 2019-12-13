@@ -65,8 +65,19 @@
 
     $conn = OpenCon();
 
+
+    if(array_key_exists('confirmar',$_POST)){
+        confirmar();
+    }
+
+    function confirmar() {
+        $sql = 'update escolinha.mensalidade
+                set pago = 1
+                where aluno = ';
+    }
+
     $sql = "select
-                alu.nome, men.valor, men.mes, men.pago
+                alu.idaluno, alu.nome, men.valor, men.mes, men.pago
             from escolinha.mensalidade as men
             inner join escolinha.aluno as alu
             on men.aluno = alu.idaluno
@@ -77,7 +88,7 @@
     $mensalidades = array();
 
     while($row = $result->fetch_assoc()){
-        $mensalidades[] = new Mensalidade($row['nome'], $row['valor'], $row['mes'], $row['pago']);
+        $mensalidades[] = new Mensalidade($row['idaluno'], $row['nome'], $row['valor'], $row['mes'], $row['pago']);
     }
   
     foreach ($mensalidades as $mensalidade) {
@@ -87,9 +98,15 @@
       echo '<td>'. $mensalidade->getValor() .'</td>';
       echo '<td>'. $mensalidade->getMes() .'</td>';
       echo '<td>'. $mensalidade->getPago() .'</td>';
-      echo '<td> <button class="btn btn-success"> Confirmar </button> </td>';
+      echo '<td> 
+                <form method="post">
+                    <button class="btn btn-success" type="submit" 
+                    name="confirmar" value="'.$mensalidade->getAluno().'"> Confirmar </button>
+                </form> 
+            </td>';
       echo '</tr>';
     } 
+
     ?>
 </tbody>
 </table>
