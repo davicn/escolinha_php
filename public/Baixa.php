@@ -50,45 +50,44 @@
                 <table class="table" id="tamanho" >
   <thead>
     <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Turma</th>
-      <th scope="col">Data de Nascimento</th>
-       <th scope="col">Nome Responsavel</th>
-      <th scope="col">Telefone Responsavel</th>
-      <th scope="col">Ação</th>
+    <th scope="col">Nome do Aluno</th>
+    <th scope="col">Valor da Mensalidade</th>
+    <th scope="col">Data de Referencia</th>
+    <th scope="col">Pago</th>
+    <th scope="col">Confirmar Pagamento</th>
     </tr>
   </thead>
 <tbody>
-     <?php 
-     require_once('aluno.php');
-    
-    $aluno1 = new Aluno("Jose da Silva Oliveiira Junior", "22/03/2005", "Jose da Silva Oliveiira","$(98) 98923-0432",  "Rua Nova","Atacante" , "-"," Manhã", "Sub 17 (07-17)", "-", "-"); 
-    $aluno2 = new Aluno("Pedro Luid de Sousa Oliveira", "17/04/2015", "Sandra Maria de SOusa Oliveira","(98) 9 8825-3056",  "Rua Maranhão, 726","Goleiro" , "-","Manhã", "Sub 6 (00-06)", "-", "-");
-    $aluno3 = new Aluno("Cainã Silva de Oliveira", "01/05/2010", "Novarck Silva de Oliveira","(98) 9 88967854",  "Rua Neturno, bloco E, ap 107","-" , "-","Manhã", "Sub 17 (07-17)", "-", "-");
+<?php 
+    require_once('aluno.php');
+    require_once('mensalidade.class.php');
+    include 'db_connection.php';
 
-   /* $listagemCarrinho = new ListagemCarrinho();
-    $listagemCarrinho->adiciona($item1);
-    $listagemCarrinho->adiciona($item2);
-    $listagemCarrinho->adiciona($item3);
-    */
-    $alunos= array();
-    $alunos[] = $aluno1;
-     $alunos[] = $aluno2;
-      $alunos[] = $aluno3;
+    $conn = OpenCon();
 
+    $sql = "select
+                alu.nome, men.valor, men.mes, men.pago
+            from escolinha.mensalidade as men
+            inner join escolinha.aluno as alu
+            on men.aluno = alu.idaluno
+            where men.pago = 0";
 
+    $result = $conn->query($sql); 
 
+    $mensalidades = array();
+
+    while($row = $result->fetch_assoc()){
+        $mensalidades[] = new Mensalidade($row['nome'], $row['valor'], $row['mes'], $row['pago']);
+    }
   
-    foreach ($alunos as $row) {
+    foreach ($mensalidades as $mensalidade) {
 
       echo '<tr>';
-      echo '<td>'. $row->getNomeAluno() .'</td>';
-      echo '<td>'. $row->getTurma() .'</td>';
-      echo '<td>'. $row->getDataNascimento() .'</td>';
-      echo '<td>'. $row->getNomeResponsavel() .'</td>';
-      echo '<td>'. $row->getTelefoneResponsavel() .'</td>';
-
-      echo '<td>' . "<img src='../img/selecao.PNG'width= 40 alt='Alterar' /></a>" .'</td>';
+      echo '<td>'. $mensalidade->getAluno() .'</td>';
+      echo '<td>'. $mensalidade->getValor() .'</td>';
+      echo '<td>'. $mensalidade->getMes() .'</td>';
+      echo '<td>'. $mensalidade->getPago() .'</td>';
+      echo '<td> <button class="btn btn-success"> Confirmar </button> </td>';
       echo '</tr>';
     } 
     ?>
