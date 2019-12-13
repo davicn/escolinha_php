@@ -1,34 +1,21 @@
 <?php
-$name = $_POST['nome'];
-$valor = $_POST['valor'];
-$quantidade = $_POST['quantidade'];
-$descricao = $_POST['descricao'];
-$tamanho = $_POST['tamanho'];
+	include "../model/connectDb.php";
 
-include_once('item.php');
-include_once('listagemCarrinhos.php');
+	$nome = $_POST['nome'];
+	$valor = $_POST['valor'];
+	$quantidade = $_POST['quantidade'];
+	$descricao = $_POST['descricao'];
+	$tamanho = $_POST['tamanho'];
 
-print $tamanho;
-echo $tamanho;
+	$nome = mysqli_real_escape_string($link, $_REQUEST['nome']);
+	$valor = mysqli_real_escape_string($link, $_REQUEST['valor']);
+	$quantidade = mysqli_real_escape_string($link, $_REQUEST['quantidade']);
+	$descricao = mysqli_real_escape_string($link, $_REQUEST['descri$descricao']);
+	$tamanho = mysqli_real_escape_string($link, $_REQUEST['tamanho']);
 
-if(($name != "") and ($valor != "") and ($quantidade != "") and ($descricao != "" ) and ($tamanho != "")){
-	$carrinhoItems = new listagemCarrinho();
-	$item = new Item($name, $valor, $quantidade, $tamanho, $descricao);
-	
-	$carrinhoItems->Adiciona($item);
-	echo $item->getNome();
-	/*
-	$name = "";
-	$valor = "";
-	$quantidade = "";
-	$descricao = "";
-	$tamanho = "";
-*/
+	$sql = "INSERT INTO itens (nome, valor, quantidade, descricao,tamanho) VALUES ('$nome', '$valor', '$quantidade', '$descricao','$tamanho')";
+	mysqli_query($conn,$sql)
 
-	 header('Location: admin.php');
-	
-} else {
-	header('Location: cadastraItem.php');
-}
+
 
 ?>

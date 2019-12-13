@@ -101,7 +101,16 @@
                         <h5 class="card-title">Pesquisar Turma</h5>
                     </div>
                     <div class="card-footer">
-                        <a onClick="document.location.href='consultaTurma.php'"  class="btn btn-success">Iniciar</a>
+                    <a onClick="document.location.href='consultaTurma.php'"  class="btn btn-success">Iniciar</a>
+                    </div>
+                </div>
+                <div class="card  h-100 text-center">
+                    <img class="card-img-top" src="../img/mensalidades.PNG" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Turma: Mensalidades</h5>
+                    </div>
+                    <div class="card-footer">
+                    <a onClick="document.location.href='Mensalidade.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
                 <div class="card  h-100 text-center">

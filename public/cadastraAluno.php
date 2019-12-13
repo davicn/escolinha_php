@@ -41,74 +41,103 @@
     </nav>
     <br>
 
+    <?php
+        include 'db_connection.php';
+       
+
+        $status = "";
+        if(isset($_POST['new']) && $_POST['new']==1){
+            $conn = OpenCon();
+            $trn_date = date("Y-m-d");
+            $nomeAluno = $_REQUEST['nomeAluno'];
+            $dataNascimento = $_REQUEST['dataNascimento'];
+            $nomeResponsavel = $_REQUEST['nomeResponsavel'];
+            $telefoneResponsavel = $_REQUEST['telefoneResponsavel'];
+            $endereco = $_REQUEST['endereco'];
+            $posicaoTime = $_REQUEST['posicaoTime'];
+            $turma = $_REQUEST['turma'];
+            $observacaoMedica = $_REQUEST['observacaoMedica'];
+            $autorizacaoMedica = $_REQUEST['autorizacaoMedica'];
+
+            $ins_query="insert into aluno
+            (`autorizaMedica`,`dataInscricao`,`dataNasc`,`endereco`, `idturma` , `nome`,
+            `obsMedica` , `poiscao` , `responsavel`, `status`, `telefone`) values
+            ('$autorizacaoMedica','$trn_date','$dataNascimento','$endereco', '$turma', '$nomeAluno', ' $observacaoMedica', '$posicaoTime', '$nomeResponsavel', 'Ativo', '$telefoneResponsavel')";
+
+
+            mysqli_query($conn,$ins_query)
+            or die(mysql_error());
+            CloseCon($conn);
+            $status = "<p style='color: black;'>Novo Registro Adicionado com Sucesso. </p>
+            <a href='ConsultaAluno.php'>Consultar Registro</a>";
+        }
+    ?>
+
+
     <div class="container">
         <div class="card h-100 ">
             <div class="card-header text-center">
                 <h2>Página Administrativa - Cadastro de Aluno</h2>
             </div>
             <div class="card-body">
-                <form action="adicionaAluno.php" method="POST">
+                <div style="background-color: red; text-align: center;">
+                 <p style="color:#FF0000;"><?php echo $status; ?></p>
+                </div> 
+                <form action="" name="form" method="POST">
+                    <input type="hidden" name="new" value="1" />
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome completo</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="nomeAluno">
+                        <input class="form-control" id="exampleFormControlInput1" name="nomeAluno" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Data de Nascimento</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="dataNascimento">
+                        <input class="form-control" type="date" id="exampleFormControlInput1" name="dataNascimento" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome do Responsavel</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="nomeResponsavel">
+                        <input class="form-control" id="exampleFormControlInput1" name="nomeResponsavel" required>
                     </div>                    
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Telefone do Responsavel</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="telefoneResponsavel">
+                        <input class="form-control" id="exampleFormControlInput1" name="telefoneResponsavel" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Endereço</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="endereco">
+                        <input class="form-control" id="exampleFormControlInput1" name="endereco" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Posição</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="posicaoTime">
+                        <input class="form-control" id="exampleFormControlInput1" name="posicaoTime" required>
                     </div>                   
                      <div class="form-group">
                         <label for="exampleFormControlInput1">Foto</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="foto">
+                        <input class="form-control" id="exampleFormControlInput1" name="foto" required>
                     </div>
 
-
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect">Turno</label>
-                        <select class="form-control" name="turno">
-                            <option>Manhã</option>
-                            <option>Tarde</option>
-                        </select>
-                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Turma por idade</label>
-                        <select class="form-control" name="turma">
-                            <option>Sub 6 (00-06)</option>
-                            <option>Sub 17 (07-17)</option>
+                        <select class="form-control" name="turma" required>
+                            <option value="1">Sub 6 (00-06)</option>
+                            <option value="2">Sub 17 (07-17)</option>
                         </select>
                     </div>
 
                      <div class="form-group">
                         <label for="exampleFormControlInput1">Observação Médica</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="observacaoMedica">
+                        <input class="form-control" id="exampleFormControlInput1" name="observacaoMedica" required>
                     </div>
                     
 
                      <div class="form-group">
                         <label for="exampleFormControlInput1">Autorização Médica</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="autorizacaoMedica">
+                        <input class="form-control" id="exampleFormControlInput1" name="autorizacaoMedica" required>
                     </div>
                     
                     
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <p><input name="submit" type="submit" value="Enviar" /></p>
                         </div>
                     </div>
                 </form>
@@ -118,7 +147,7 @@
     <br>
     <br>
     <footer class="footer py-4 mt-auto bg-dark">
-        <div class="container">
+        <div class="container" >
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
         </div>
     </footer>

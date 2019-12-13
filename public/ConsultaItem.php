@@ -47,53 +47,44 @@
                 <h2>Página Administrativa - Consulta de Item</h2>
             </div>
             <div class="card-body">
-                <table class="table" id="tamanho" >
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Quantidade</th>
-      <th scope="col">Tamanho</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Ação</th>
-    </tr>
-  </thead>
-<tbody>
-     <?php 
-     require_once('item.php');
-    require_once('listagemCarrinhos.php');
-    $item1 = new Item("Meião", "10,00", "5", "médio", "Meião Médio"); 
-    $item2 = new Item("Blusão", "20,00", "10", "médio", "Blusão Médio");
-    $item3 = new Item("Short", "30,00", "3", "médio", "Short Médio");
+                <table class="table" id="tamanho">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Tamanho</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        include "../model/connectDb.php";
+                        $query = mysqli_query($conn, "select * from itens;");
+                        $row = mysqli_num_rows($query);
+                        if ($row > 0) {
+                            while ($line = mysqli_fetch_array($query)) {
+                                $nome = $line['nome'];
+                                $valor = $line['valor'];
+                                $quant = $line['quantidade'];
+                                $tamanho = $line['tamanho'];
+                                $descr = $line['descricao'];
 
-   /* $listagemCarrinho = new ListagemCarrinho();
-    $listagemCarrinho->adiciona($item1);
-    $listagemCarrinho->adiciona($item2);
-    $listagemCarrinho->adiciona($item3);
-    */
-    $items= array();
-    $items[] = $item1;
-     $items[] = $item2;
-      $items[] = $item3;
+                                echo '<tr>';
+                                echo '<td>' . $nome . '</td>';
+                                echo '<td>' . $valor . '</td>';
+                                echo '<td>' . $quant . '</td>';
+                                echo '<td>' . $tamanho . '</td>';
+                                echo '<td>' . $descr . '</td>';
 
-
-
-  
-    foreach ($items as $row) {
-
-      echo '<tr>';
-      echo '<td>'. $row->getNome() .'</td>';
-      echo '<td>'. $row->getValor() .'</td>';
-      echo '<td>'. $row->getQuantidade() .'</td>';
-      echo '<td>'. $row->getTamanho() .'</td>';
-      echo '<td>'. $row->getDescricao() .'</td>';
-
-      echo '<td>' + "<img src='img\lixeira.png'width= 10 />" + "|"  + '</td>';
-      echo '</tr>';
-    } 
-    ?>
-</tbody>
-</table>
+                                echo '<td>' . "<a href='Alteraritem.php'><img src='../img/editar2.PNG'width= 30 alt='Alterar' /></a>" . "|" . "<img src='../img/lixeira.PNG'width= 20 />"  . '</td>';
+                                echo '</tr>';
+                            }
+                        }
+                        ?>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -105,7 +96,6 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
         </div>
     </footer>
-
 </body>
 
 </html>

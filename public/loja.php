@@ -60,8 +60,26 @@ include "../model/connectDb.php"
                 <?php
                 $query = mysqli_query($conn, "select * from itens;");
                 $row = mysqli_num_rows($query);
+                if ($row > 0){
+                    while ($line = mysqli_fetch_array($query)){
+                        $nome = $line['nome'];
+                        $valor = $line['valor'];
+                        $descr = $line['descricao'];
 
-                if ($row > 0) {
+                        echo "
+                            <div class='card'>
+                                <div class='card-body'>
+                                    <img src='...' class='card-img-top' alt='...'>
+                                    <div class='card-body'>
+                                    <h5 class='card-title'>" . $nome . " - R$ " . $valor . "</h5>";
+                        echo "<p>" . $descr . "</p>";
+                        echo "<a href='#' class='btn btn-success'>Comprar</a>
+                        </div>
+                      </div></div><br>";
+                    }
+                }
+
+                /* if ($row > 0) {
                     while ($line = mysqli_fetch_array($query)) {
                         $nome = $line['nome'];
                         $valor = $line['valor'];
@@ -76,20 +94,12 @@ include "../model/connectDb.php"
                         echo "<p>" . $descr . "</p>";
                         echo "<a href='#' class='btn btn-success'>Comprar</a>
                         </div>
-                      </div></div>";
-
-                        /*  echo "<div class='card' style='width: 18rem;'>
-                            <img src='...' class='card-img-top' alt='...'>
-                            <div class='card-body'>
-                              <h5 class='card-title'>Card title</h5>
-                              <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                              <a href='#' class='btn btn-primary'>Go somewhere</a>
-                            </div>
-                          </div>"; */
-                    }
-                }
+                      </div></div><br>";
+                } */
 
                 ?>
             </div>
         </div>
     </div>
+</body>
+</html>

@@ -25,6 +25,9 @@
                     <a data-pagina="#inscr" class="nav-link" href='galeria.php'>Galeria</a>
                 </li>
                 <li class="nav-item">
+                    <a data-pagina="#inscr" class="nav-link" href='loja.php'>Loja</a>
+                </li>
+                <li class="nav-item">
                     <a data-pagina="#inscr" class="nav-link" href='eventos.php'>Eventos</a>
                 </li>
                 <li class="nav-item">
