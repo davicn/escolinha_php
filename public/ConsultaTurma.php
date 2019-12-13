@@ -49,41 +49,95 @@
             <div class="card-body">
                 <table class="table" id="tamanho" >
   <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Turma</th>
-    </tr>
-  </thead>
-<tbody>
-     <?php 
-     require_once('aluno.php');
+  <form id="frmconsulta" name="frmconsulta" action="consultaTurma.php" method="POST">
+		<fieldset id ="consulta">
+        <label for="exampleFormControlSelect1">Turma por idade</label>
+                        <select name = "turma" class="form-control">
+                            <option value="0">Sub 6 (00-06)</option>
+                            <option value="1">Sub 10 (07-10)</option>
+                            <option value="2">Sub 13 (11-13)</option>
+                            <option value="3">Sub 16 (14-16)</option>
+                            <option value="4">Sub 17 (07-17)</option>
+                        </select>
+                        <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                        </div>
+			</fieldset>
+	</form>
+<?php 
+
+
+require_once('aluno.php');
     
-    $aluno1 = new Aluno("Jose da Silva Oliveiira Junior", "22/03/2005", "Jose da Silva Oliveiira","$(98) 98923-0432",  "Rua Nova","Atacante" , "-"," Manhã", "Sub 17 (07-17)", "-", "-"); 
-    $aluno2 = new Aluno("Pedro Luid de Sousa Oliveira", "17/04/2015", "Sandra Maria de SOusa Oliveira","(98) 9 8825-3056",  "Rua Maranhão, 726","Goleiro" , "-","Manhã", "Sub 6 (00-06)", "-", "-");
-    $aluno3 = new Aluno("Cainã Silva de Oliveira", "01/05/2010", "Novarck Silva de Oliveira","(98) 9 88967854",  "Rua Neturno, bloco E, ap 107","-" , "-","Manhã", "Sub 17 (07-17)", "-", "-");
+$aluno1 = new Aluno("Jose da Silva Oliveiira Junior", "22/03/2005", "Jose da Silva Oliveiira","$(98) 98923-0432",  "Rua Nova","Atacante" , "-"," Manhã", "Sub 17 (07-17)", "-", "-"); 
+$aluno2 = new Aluno("Pedro Luid de Sousa Oliveira", "17/04/2015", "Sandra Maria de SOusa Oliveira","(98) 9 8825-3056",  "Rua Maranhão, 726","Goleiro" , "-","Manhã", "Sub 6 (00-06)", "-", "-");
+$aluno3 = new Aluno("Cainã Silva de Oliveira", "01/05/2010", "Novarck Silva de Oliveira","(98) 9 88967854",  "Rua Neturno, bloco E, ap 107","-" , "-","Manhã", "Sub 17 (07-17)", "-", "-");
 
-   /* $listagemCarrinho = new ListagemCarrinho();
-    $listagemCarrinho->adiciona($item1);
-    $listagemCarrinho->adiciona($item2);
-    $listagemCarrinho->adiciona($item3);
-    */
-    $alunos= array();
-    $alunos[] = $aluno1;
-     $alunos[] = $aluno2;
-      $alunos[] = $aluno3;
+/* $listagemCarrinho = new ListagemCarrinho();
+$listagemCarrinho->adiciona($item1);
+$listagemCarrinho->adiciona($item2);
+$listagemCarrinho->adiciona($item3);
+*/
+$alunos= array();
+$alunos[] = $aluno1;
+$alunos[] = $aluno2;
+$alunos[] = $aluno3;
+
+#session_start();
+
+
+$opcao = $_POST["turma"];
 
 
 
-  
     foreach ($alunos as $row) {
+        if ($opcao ==0 && $row->getTurma()=='Sub 6 (00-06)'){
+        echo '<tr>';
+        echo '<td>'. $row->getNomeAluno() .'</td>';
+        echo '<td>'. $row->getTurma() .'</td>';
+      
+        echo '</tr>';
+      }
+      if ($opcao ==1 && $row->getTurma()=='Sub 10 (07-10)'){
+        echo '<tr>';
+        echo '<td>'. $row->getNomeAluno() .'</td>';
+        echo '<td>'. $row->getTurma() .'</td>';
+      
+        echo '</tr>';
+      }
+      if ($opcao ==2 && $row->getTurma()=='Sub 13 (11-13)'){
+        echo '<tr>';
+        echo '<td>'. $row->getNomeAluno() .'</td>';
+        echo '<td>'. $row->getTurma() .'</td>';
+      
+        echo '</tr>';
+      }
+      if ($opcao ==3 && $row->getTurma()=='Sub 16 (14-16)'){
+        echo '<tr>';
+        echo '<td>'. $row->getNomeAluno() .'</td>';
+        echo '<td>'. $row->getTurma() .'</td>';
+      
+        echo '</tr>';
+      }
+      if ($opcao ==4 && $row->getTurma()=='Sub 17 (07-17)'){
+        echo '<tr>';
+        echo '<td>'. $row->getNomeAluno() .'</td>';
+        echo '<td>'. $row->getTurma() .'</td>';
+      
+        echo '</tr>';
+      }
+    }
 
-      echo '<tr>';
-      echo '<td>'. $row->getNomeAluno() .'</td>';
-      echo '<td>'. $row->getTurma() .'</td>';
 
-      echo '</tr>';
-    } 
-    ?>
+
+
+
+
+
+
+
+?>
 </tbody>
 </table>
 

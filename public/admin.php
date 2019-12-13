@@ -105,12 +105,25 @@
                     </div>
                 </div>
                 <div class="card  h-100 text-center">
-                    <img class="card-img-top" src="../img/boleto.png" alt="Card image cap">
+                    <img class="card-img-top" src="../img/mensalidades.PNG" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">Mensalidades</h5>
+                        <h5 class="card-title">Turma: Mensalidades</h5>
                     </div>
                     <div class="card-footer">
-                        <a onClick="document.location.href='Mensalidade.php'"  class="btn btn-success">Iniciar</a>
+                    <a onClick="document.location.href='Mensalidade.php'"  class="btn btn-success">Iniciar</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Eventos</h3>
+            <div class="card-group">
+                <div class="card  h-100 text-center">
+                    <img class="card-img-top" src="../img/imagem1.PNG" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadastrar Eventos</h5>
+                    </div>
+                    <div class="card-footer">
+                    <a onClick="document.location.href='cadastraEvento.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
             </div>
@@ -121,7 +134,7 @@
 
     </div>
     </div>
-    </div> 
+    </div> -->
     <br>
     <footer class="py-4 bg-dark">
         <div class="container">
