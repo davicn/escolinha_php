@@ -88,7 +88,7 @@
       echo '<td>'. $row->getTamanho() .'</td>';
       echo '<td>'. $row->getDescricao() .'</td>';
 
-      echo '<td>' + "<img src='img\lixeira.png'width= 10 />" + "|"  + '</td>';
+      echo '<td>' . "<a href='Alteraritem.php'><img src='../img/editar2.PNG'width= 30 alt='Alterar' /></a>" . "|" . "<img src='../img/lixeira.PNG'width= 20 />"  . '</td>';
       echo '</tr>';
     } 
     ?>

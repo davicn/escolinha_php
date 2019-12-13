@@ -88,7 +88,7 @@
       echo '<td>'. $row->getNomeResponsavel() .'</td>';
       echo '<td>'. $row->getTelefoneResponsavel() .'</td>';
 
-      echo '<td>'. '-' .'</td>';
+      echo '<td>' . "<a href='Alteraraluno.php'><img src='../img/editar2.PNG'width= 20 alt='Alterar' /></a>" . "|" . "<img src='../img/lixeira.PNG'width= 15 />"  . '</td>';
       echo '</tr>';
     } 
     ?>
