@@ -104,6 +104,15 @@
                         <a onClick="document.location.href='consultaTurma.php'"  class="btn btn-success">Iniciar</a>
                     </div>
                 </div>
+                <div class="card  h-100 text-center">
+                    <img class="card-img-top" src="../img/boleto.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Mensalidades</h5>
+                    </div>
+                    <div class="card-footer">
+                        <a onClick="document.location.href='mensalidades.php'"  class="btn btn-success">Iniciar</a>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -112,7 +121,7 @@
 
     </div>
     </div>
-    </div> -->
+    </div> 
     <br>
     <footer class="py-4 bg-dark">
         <div class="container">
