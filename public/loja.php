@@ -76,7 +76,7 @@ include "../model/connectDb.php"
                         echo "<p>" . $descr . "</p>";
                         echo "<a href='#' class='btn btn-success'>Comprar</a>
                         </div>
-                      </div></div>";
+                      </div></div><br>";
 
                         /*  echo "<div class='card' style='width: 18rem;'>
                             <img src='...' class='card-img-top' alt='...'>

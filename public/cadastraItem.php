@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -87,7 +89,34 @@
             <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
         </div>
     </footer>
-
 </body>
-
 </html>
+
+<?php
+if ($_POST) {
+    include "../model/connectDb.php";
+
+    $query = "INSERT INTO products SET nome=:nome, valor=:valor, quantidade=:quantidade, tamanho=:tamanho, descricao=:descricao";
+    $stmt = $conn->prepare($query);
+
+    // posted values
+    $nome = htmlspecialchars(strip_tags($_POST['nome']));
+    $valor = htmlspecialchars(strip_tags($_POST['valor']));
+    $quantidade = htmlspecialchars(strip_tags($_POST['quantidade']));
+    $tamanho = htmlspecialchars(strip_tags($_POST['tamanho']));
+    $descricao = htmlspecialchars(strip_tags($_POST['descricao']));
+
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':valor', $valor);
+    $stmt->bindParam(':quantidade', $quantidade);
+    $stmt->bindParam(':tamanho', $tamanho);
+    $stmt->bindParam(':descricao', $descricao);
+
+    // Execute the query
+    if($stmt->execute()){
+        echo "<div class='alert alert-success'>Record was saved.</div>";
+    }else{
+        echo "<div class='alert alert-danger'>Unable to save record.</div>";
+    }
+    
+?>
