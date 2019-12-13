@@ -69,6 +69,8 @@
 
 
 require_once('aluno.php');
+	  
+	  
     
 $aluno1 = new Aluno("Jose da Silva Oliveiira Junior", "22/03/2005", "Jose da Silva Oliveiira","$(98) 98923-0432",  "Rua Nova","Atacante" , "-"," Manhã", "Sub 17 (07-17)", "-", "-"); 
 $aluno2 = new Aluno("Pedro Luid de Sousa Oliveira", "17/04/2015", "Sandra Maria de SOusa Oliveira","(98) 9 8825-3056",  "Rua Maranhão, 726","Goleiro" , "-","Manhã", "Sub 6 (00-06)", "-", "-");
@@ -87,7 +89,12 @@ $alunos[] = $aluno3;
 #session_start();
 
 
-$opcao = $_POST["turma"];
+$opcao = null;
+if($opcao == null) {
+	$opcao = $_REQUEST["turma"];
+}
+
+
 
 
 
