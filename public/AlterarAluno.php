@@ -1,3 +1,13 @@
+<?php 
+include 'db_connection.php';
+$conn = OpenCon();
+$id=$_REQUEST['id'];
+$query = "SELECT * from aluno where idaluno='".$id."'"; 
+$result = mysqli_query($conn, $query) or die ( mysqli_error());
+$row = mysqli_fetch_assoc($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -47,71 +57,95 @@
                 <h2>Página Administrativa - Alteração de Cadastro de Aluno</h2>
             </div>
             <div class="card-body">
-                <form >
+            <?php
+                $status = "";
+                if(isset($_POST['new']) && $_POST['new']==1){
+                    $id=$_REQUEST['id'];
+                    $nomeAluno = $_REQUEST['nomeAluno'];
+                    $dataNascimento = $_REQUEST['dataNascimento'];
+                    $nomeResponsavel = $_REQUEST['nomeResponsavel'];
+                    $telefoneResponsavel = $_REQUEST['telefoneResponsavel'];
+                    $endereco = $_REQUEST['endereco'];
+                    $posicaoTime = $_REQUEST['posicaoTime'];
+                    $turma = $_REQUEST['turma'];
+                    $observacaoMedica = $_REQUEST['observacaoMedica'];
+                    $autorizacaoMedica = $_REQUEST['autorizacaoMedica'];
+                    $status = $_REQUEST['status'];
+
+                    $update="update aluno set status='".$status."', nome='".$nomeAluno."', dataNasc='".$dataNascimento."', responsavel='".$nomeResponsavel."', telefone='".$telefoneResponsavel."', endereco='".$endereco."', poiscao='".$posicaoTime."', idturma='".$turma."', obsMedica='".$observacaoMedica."', autorizaMedica='". $autorizacaoMedica."' where idaluno='".$id."'";
+                    mysqli_query($conn, $update) or die(mysqli_error());
+                    $status = "<p style='color: black;'>Novo Registro Alterado com Sucesso. </p><a href='ConsultaAluno.php'>Consultar Registro</a>";
+                    echo '<p style="background-color: red; text-align: center;">'.$status.'</p>';
+                }else {
+            ?>
+
+                <form name="form" method="post" action="">
+                    <input type="hidden" name="new" value="1" />
+                    <input name="id" type="hidden" value="<?php echo $row['idaluno'];?>" />
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome completo</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="nomeAluno">
+                        <input class="form-control" id="exampleFormControlInput1" name="nomeAluno"  value="<?php echo $row['nome'];?>"  required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Data de Nascimento</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="dataNascimento">
+                        <input class="form-control" type="date" id="exampleFormControlInput1" name="dataNascimento" required  value="<?php echo $row['dataNasc'];?>" >
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Nome do Responsavel</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="nomeResponsavel">
+                        <input class="form-control" id="exampleFormControlInput1" name="nomeResponsavel" required value="<?php echo $row['responsavel'];?>">
                     </div>                    
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Telefone do Responsavel</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="telefoneResponsavel">
+                        <input class="form-control" id="exampleFormControlInput1" name="telefoneResponsavel" required value="<?php echo $row['telefone'];?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Endereço</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="endereco">
+                        <input class="form-control" id="exampleFormControlInput1" name="endereco" required value="<?php echo $row['endereco'];?>">
                     </div>
+
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Posição</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="posicaoTime">
-                    </div>                   
-                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Foto</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="foto">
+                        <input class="form-control" id="exampleFormControlInput1" name="posicaoTime" required value="<?php echo $row['poiscao'];?>">
                     </div>
 
 
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect">Turno</label>
-                        <select class="form-control" name="turno">
-                            <option>Manhã</option>
-                            <option>Tarde</option>
+                     <div class="form-group">
+                        <label for="exampleFormControlSelect1">Status do Aluno</label>
+                        <select class="form-control" name="status"  value="<?php echo $row['status'];?>">
+                            <option value="Ativo" <?=($row['status'] == 'Ativo')?'selected':''?>>Ativo</option>
+                            <option value="Inativo" <?=($row['status'] == 'Inativo')?'selected':''?> >Inativo</option>
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for="exampleFormControlSelect1">Turma por idade</label>
-                        <select class="form-control" name="turma">
-                            <option>Sub 6 (00-06)</option>
-                            <option>Sub 17 (07-17)</option>
+                        <select class="form-control" name="turma" value="<?php echo $row['idturma'];?>">
+                            <option value="1"  <?=($row['idturma'] == '1')?'selected':''?>>Sub 6 (00-06)</option>
+                            <option value="2"  <?=($row['idturma'] == '2')?'selected':''?>>Sub 17 (07-17)</option>
                         </select>
                     </div>
 
                      <div class="form-group">
                         <label for="exampleFormControlInput1">Observação Médica</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="observacaoMedica">
+                        <input class="form-control" id="exampleFormControlInput1" name="observacaoMedica" required value="<?php echo $row['obsMedica'];?>">
                     </div>
                     
 
                      <div class="form-group">
                         <label for="exampleFormControlInput1">Autorização Médica</label>
-                        <input class="form-control" id="exampleFormControlInput1" name="autorizacaoMedica">
+                        <input class="form-control" id="exampleFormControlInput1" name="autorizacaoMedica" required value="<?php echo $row['autorizaMedica'];?>">
                     </div>
                     
                     
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-success">Alterar</button>
+                            <p><input name="submit" type="submit" value="Alterar" /></p>
                         </div>
                     </div>
                 </form>
+
+            <?php } ?>    
             </div>
         </div>
     </div>

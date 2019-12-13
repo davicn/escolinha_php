@@ -60,7 +60,7 @@
           <th scope="col">Quantidade</th>
           <th scope="col">Tamanho</th>
           <th scope="col">Descrição</th>
-          <th scope="col">A��o</th>
+          <th scope="col">Ação</th>
         </tr>
       </thead>
       <tbody>
